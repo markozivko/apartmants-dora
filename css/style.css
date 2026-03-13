@@ -460,6 +460,11 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   grid-row: span 2;
 }
 
+/* Preserve natural aspect ratio — no cropping */
+.gallery__item--large img {
+  object-fit: contain;
+}
+
 .gallery__item img {
   transition: transform 0.6s var(--ease);
 }
@@ -557,7 +562,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 /* Calendar wrapper */
 .avail__cal-wrap {
   width: 100%;
-  max-width: 480px;
+  max-width: 680px;
 }
 
 /* Month header */
@@ -570,20 +575,20 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 
 .cal__month-label {
   font-family: var(--f-serif);
-  font-size: 1.4rem;
+  font-size: 1.75rem;
   font-weight: 300;
   color: var(--c-dark);
-  min-width: 200px;
+  min-width: 260px;
   text-align: center;
 }
 
 .cal__nav-btn {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: 1.5px solid var(--c-sand-dark);
   background: var(--c-white);
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--c-sea);
   display: flex;
   align-items: center;
@@ -601,17 +606,17 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .cal__grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 4px;
+  gap: 6px;
 }
 
 .cal__day-header {
   text-align: center;
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--c-stone);
-  padding-bottom: 6px;
+  padding-bottom: 8px;
 }
 
 .cal__day {
@@ -620,7 +625,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   align-items: center;
   justify-content: center;
   border-radius: var(--radius);
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   font-weight: 400;
   position: relative;
   transition: transform 0.15s var(--ease);
@@ -898,8 +903,15 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
     flex-wrap: wrap;
   }
 
-  .gallery__grid { grid-template-columns: 1fr; }
-  .gallery__item--large { grid-column: span 1; }
+  .gallery__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .gallery__item--large {
+    grid-column: span 1;
+    grid-row: span 1;
+    height: auto;
+  }
   .amenities__grid { grid-template-columns: 1fr; }
 
   /* Calendar: fill full width, shrink day text slightly */
