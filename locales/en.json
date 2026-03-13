@@ -1,0 +1,60 @@
+{
+  "nav": {
+    "about": "About",
+    "gallery": "Gallery",
+    "amenities": "Amenities",
+    "location": "Location",
+    "contact": "Contact"
+  },
+  "hero": {
+    "tagline": "Your home by the Adriatic",
+    "cta": "Explore Apartment"
+  },
+  "about": {
+    "label": "About",
+    "title": "Welcome to Apartment Dora",
+    "description": "Nestled in the peaceful village of Povljana on the island of Pag, Apartment Dora offers a perfect retreat for those seeking sun, sea, and tranquility. With warm interiors, a private barbecue area, and stunning views of the Adriatic, your holiday starts the moment you arrive.",
+    "detail1_number": "4",
+    "detail1_label": "Guests",
+    "detail2_number": "60m²",
+    "detail2_label": "Living Space",
+    "detail3_number": "50m",
+    "detail3_label": "From the Sea"
+  },
+  "gallery": {
+    "label": "Gallery",
+    "title": "A Glimpse of Apartments Dora"
+  },
+  "amenities": {
+    "label": "Amenities",
+    "title": "Everything You Need",
+    "items": [
+      { "icon": "wifi", "title": "Free Wi-Fi", "desc": "High-speed internet throughout the apartment" },
+      { "icon": "air-conditioning", "title": "Air Conditioning", "desc": "Stay cool during warm summer days" },
+      { "icon": "parking", "title": "Free Parking", "desc": "Private parking space included" },
+      { "icon": "bbq", "title": "BBQ Area", "desc": "Private barbecue grill in the outdoor area" },
+      { "icon": "kitchen", "title": "Full Kitchen", "desc": "Fully equipped kitchen for home cooking" },
+      { "icon": "beach", "title": "Near the Beach", "desc": "Just 50 metres from the crystal-clear sea" }
+    ]
+  },
+  "location": {
+    "label": "Location",
+    "title": "Povljana, Island of Pag",
+    "description": "Povljana is a charming village on the southern tip of the island of Pag, known for its calm, shallow waters ideal for families and crystal-clear sea. The island is easily reachable by ferry and offers a unique blend of untouched nature, local gastronomy, and authentic Croatian island life.",
+    "cta": "Open in Google Maps"
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Get in Touch",
+    "description": "Ready to book your stay or have a question? We'd love to hear from you.",
+    "name_placeholder": "Your Name",
+    "email_placeholder": "Your Email",
+    "message_placeholder": "Your Message",
+    "send": "Send Message",
+    "or": "Or reach us directly",
+    "phone": "+385 XX XXX XXXX"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

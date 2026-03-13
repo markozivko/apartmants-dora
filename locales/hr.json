@@ -1,0 +1,60 @@
+{
+  "nav": {
+    "about": "O apartmanu",
+    "gallery": "Galerija",
+    "amenities": "Sadržaji",
+    "location": "Lokacija",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "tagline": "Vaš dom uz Jadransko more",
+    "cta": "Istražite apartman"
+  },
+  "about": {
+    "label": "O nama",
+    "title": "Dobrodošli u Apartman Dora",
+    "description": "Smješten u mirnom selu Povljana na otoku Pagu, Apartman Dora savršeno je utočište za sve koji traže sunce, more i tišinu. S toplim interijером, privatnim prostorom za roštilj i prekrasnim pogledom na Jadransko more, odmor počinje čim stignete.",
+    "detail1_number": "4",
+    "detail1_label": "Gostiju",
+    "detail2_number": "60m²",
+    "detail2_label": "Stambeni prostor",
+    "detail3_number": "50m",
+    "detail3_label": "Od mora"
+  },
+  "gallery": {
+    "label": "Galerija",
+    "title": "Pogled na Apartmane Dora"
+  },
+  "amenities": {
+    "label": "Sadržaji",
+    "title": "Sve što vam treba",
+    "items": [
+      { "icon": "wifi", "title": "Besplatni Wi-Fi", "desc": "Brzi internet u cijelom apartmanu" },
+      { "icon": "air-conditioning", "title": "Klima uređaj", "desc": "Ugodna temperatura i ljeti i u jesen" },
+      { "icon": "parking", "title": "Besplatno parkiranje", "desc": "Privatno parkirno mjesto u sklopu objekta" },
+      { "icon": "bbq", "title": "Roštilj", "desc": "Privatni roštilj u vanjskom prostoru" },
+      { "icon": "kitchen", "title": "Potpuno opremljena kuhinja", "desc": "Sve što vam treba za kuhanje" },
+      { "icon": "beach", "title": "Blizu plaže", "desc": "Samo 50 metara od kristalno čistog mora" }
+    ]
+  },
+  "location": {
+    "label": "Lokacija",
+    "title": "Povljana, otok Pag",
+    "description": "Povljana je šarmantno mjesto na južnom dijelu otoka Paga, poznato po mirnom, plitkom moru idealnom za obitelji i bistrim vodama. Otok je lako dostupan trajektom i nudi jedinstvenu kombinaciju netaknute prirode, lokalne gastronomije i autentičnog života na jadranskim otocima.",
+    "cta": "Otvori u Google Mapsu"
+  },
+  "contact": {
+    "label": "Kontakt",
+    "title": "Stupite u kontakt",
+    "description": "Spremate li se rezervirati smještaj ili imate pitanje? Rado ćemo vam odgovoriti.",
+    "name_placeholder": "Vaše ime",
+    "email_placeholder": "Vaš e-mail",
+    "message_placeholder": "Vaša poruka",
+    "send": "Pošalji poruku",
+    "or": "Ili nas kontaktirajte direktno",
+    "phone": "+385 XX XXX XXXX"
+  },
+  "footer": {
+    "rights": "Sva prava pridržana."
+  }
+}
