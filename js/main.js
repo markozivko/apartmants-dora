@@ -189,25 +189,25 @@ function initScrollReveal() {
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 }
 
-// ── Contact form ──────────────────────────────────────────────
+// ── Contact form → WhatsApp ───────────────────────────────────
+const WHATSAPP_NUMBER = '385998115120'; // +385 99 811 5120
+
 function initContactForm() {
   const form = document.getElementById('contactForm');
   if (!form) return;
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const btn = form.querySelector('[type=submit]');
-    btn.textContent = '✓ Sent!';
-    btn.disabled = true;
-    btn.style.opacity = '0.6';
 
-    // Reset after 3s (placeholder — wire up a real backend later)
-    setTimeout(() => {
-      btn.textContent = get(translations, 'contact.send') || 'Send Message';
-      btn.disabled = false;
-      btn.style.opacity = '';
-      form.reset();
-    }, 3000);
+    const name    = form.querySelector('#formName').value.trim();
+    const email   = form.querySelector('#formEmail').value.trim();
+    const message = form.querySelector('#formMessage').value.trim();
+
+    const text = `Hello! My name is ${name} (${email}).\n\n${message}`;
+    const url  = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+
+    window.open(url, '_blank');
+    form.reset();
   });
 }
 
