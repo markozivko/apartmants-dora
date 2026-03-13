@@ -831,39 +831,36 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 
 /* ── 13. Responsive ───────────────────────────────────────── */
 @media (max-width: 900px) {
-  /* Fix: nav__inner must paint above the mobile overlay (which is z-index 99
-     inside nav's stacking context, while nav__inner has no z-index and would
-     otherwise be painted beneath it, blocking the burger button). */
-  .nav__inner {
-    position: relative;
-    z-index: 100;
-  }
-
+  /* Dropdown hangs below the nav bar via position: absolute; top: 100%.
+     Because .nav__inner has no position, the containing block is .nav
+     (position: fixed, left: 0, right: 0) — so the dropdown is full-width
+     and always below the burger, which is never covered. */
   .nav__links { display: none; }
+
   .nav__links.open {
     display: flex;
     flex-direction: column;
-    position: fixed;
-    inset: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
     background: var(--c-dark);
     align-items: center;
-    justify-content: center;
-    gap: var(--space-lg);
-    z-index: 99;
+    gap: 1.25rem;
+    padding: 1.75rem 1.5rem 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
   }
+
   .nav__links.open a {
-    font-size: 1.25rem;
-    color: var(--c-white);
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.12em;
+    padding: 0.4rem 1rem;
   }
-  .nav__links.open a:hover { color: var(--c-sand); }
+  .nav__links.open a:hover { color: var(--c-white); }
 
   .nav__burger { display: flex; }
-
-  /* Keep burger spans white when menu is open (even if nav is .scrolled) */
-  .nav__burger.open span,
-  .nav.scrolled .nav__burger.open span {
-    background: var(--c-white);
-  }
 
   /* Reduce vertical padding on tablet */
   .section { padding-block: var(--space-xl); }
