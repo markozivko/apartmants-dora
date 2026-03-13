@@ -11,7 +11,7 @@ let translations = {};
 // ── Inline translations (works with file:// and any server) ───
 const LOCALES = {
   en: {
-    nav: { about: "About", gallery: "Gallery", amenities: "Amenities", location: "Location", contact: "Contact" },
+    nav: { about: "About", gallery: "Gallery", amenities: "Amenities", availability: "Availability", location: "Location", contact: "Contact" },
     hero: { tagline: "Your private oasis on the Adriatic", cta: "Discover more" },
     about: {
       label: "About",
@@ -45,10 +45,18 @@ const LOCALES = {
       message_placeholder: "Your Message", send: "Send Message on WhatsApp",
       or: "Or reach us directly", phone: "+385 99 811 5120"
     },
+    availability: {
+      label: "Availability", title: "Check Availability",
+      description: "Select an apartment and browse the calendar. Green dates are free, red dates are already reserved.",
+      apt1: "Apartment 1", apt2: "Apartment 2",
+      available: "Available", booked: "Booked", past: "Past", today: "Today",
+      months: ["January","February","March","April","May","June","July","August","September","October","November","December"],
+      days: ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
+    },
     footer: { rights: "All rights reserved." }
   },
   hr: {
-    nav: { about: "O nama", gallery: "Galerija", amenities: "Sadržaji", location: "Lokacija", contact: "Kontakt" },
+    nav: { about: "O nama", gallery: "Galerija", amenities: "Sadržaji", availability: "Dostupnost", location: "Lokacija", contact: "Kontakt" },
     hero: { tagline: "Vaša privatna oaza na Jadranu", cta: "Otkrijte više" },
     about: {
       label: "O nama",
@@ -81,6 +89,14 @@ const LOCALES = {
       name_placeholder: "Vaše ime", email_placeholder: "Vaš e-mail",
       message_placeholder: "Vaša poruka", send: "Pošalji poruku na WhatsApp",
       or: "Ili nas kontaktirajte direktno", phone: "+385 99 811 5120"
+    },
+    availability: {
+      label: "Dostupnost", title: "Provjera dostupnosti",
+      description: "Odaberite apartman i pregledajte kalendar. Zeleni datumi su slobodni, crveni su već rezervirani.",
+      apt1: "Apartman 1", apt2: "Apartman 2",
+      available: "Slobodno", booked: "Zauzeto", past: "Prošlo", today: "Danas",
+      months: ["Siječanj","Veljača","Ožujak","Travanj","Svibanj","Lipanj","Srpanj","Kolovoz","Rujan","Listopad","Studeni","Prosinac"],
+      days: ["Pon","Uto","Sri","Čet","Pet","Sub","Ned"]
     },
     footer: { rights: "Sva prava pridržana." }
   }

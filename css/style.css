@@ -515,7 +515,206 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   line-height: 1.6;
 }
 
-/* ── 10. Location ─────────────────────────────────────────── */
+/* ── 10. Availability Calendar ───────────────────────────── */
+.avail__inner {
+  margin-top: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+/* Apartment tabs */
+.avail__tabs {
+  display: flex;
+  gap: 0;
+  border: 1.5px solid var(--c-sand-dark);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.avail__tab {
+  padding: 0.65rem 2rem;
+  font-family: var(--f-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-body);
+  background: var(--c-white);
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+
+.avail__tab.active {
+  background: var(--c-sea);
+  color: var(--c-white);
+}
+
+.avail__tab:hover:not(.active) {
+  background: var(--c-sand);
+}
+
+/* Calendar wrapper */
+.avail__cal-wrap {
+  width: 100%;
+  max-width: 480px;
+}
+
+/* Month header */
+.cal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-sm);
+}
+
+.cal__month-label {
+  font-family: var(--f-serif);
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--c-dark);
+  min-width: 200px;
+  text-align: center;
+}
+
+.cal__nav-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid var(--c-sand-dark);
+  background: var(--c-white);
+  font-size: 1rem;
+  color: var(--c-sea);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+
+.cal__nav-btn:hover {
+  background: var(--c-sea);
+  color: var(--c-white);
+  border-color: var(--c-sea);
+}
+
+/* Calendar grid */
+.cal__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.cal__day-header {
+  text-align: center;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-stone);
+  padding-bottom: 6px;
+}
+
+.cal__day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  font-size: 0.82rem;
+  font-weight: 400;
+  position: relative;
+  transition: transform 0.15s var(--ease);
+}
+
+.cal__day--empty { background: transparent; }
+
+.cal__day--available {
+  background: #e8f5ee;
+  color: #2d7a4f;
+}
+
+.cal__day--booked {
+  background: #fdecea;
+  color: #c0392b;
+  font-weight: 500;
+}
+
+.cal__day--past {
+  background: transparent;
+  color: #ccc;
+}
+
+.cal__day--today {
+  outline: 2px solid var(--c-sea);
+  outline-offset: -2px;
+  font-weight: 600;
+}
+
+.cal__today-dot {
+  display: none; /* handled via outline */
+}
+
+/* Admin click state */
+.cal__day--admin {
+  cursor: pointer;
+}
+.cal__day--admin:hover {
+  transform: scale(1.12);
+  filter: brightness(0.92);
+}
+
+/* Legend */
+.avail__legend {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  margin-top: var(--space-sm);
+}
+
+.legend__item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--c-stone);
+}
+
+.legend__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.legend__dot--available { background: #e8f5ee; border: 1.5px solid #2d7a4f; }
+.legend__dot--booked    { background: #fdecea; border: 1.5px solid #c0392b; }
+.legend__dot--past      { background: transparent; border: 1.5px solid #ddd; }
+
+/* Admin bar */
+.avail__admin-bar {
+  display: none;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(26, 107, 138, 0.08);
+  border: 1.5px solid rgba(26, 107, 138, 0.25);
+  border-radius: var(--radius);
+  font-size: 0.8rem;
+  color: var(--c-sea);
+  flex-wrap: wrap;
+}
+
+.avail__admin-bar.active {
+  display: flex;
+}
+
+.btn--sm {
+  padding: 0.4rem 1rem;
+  font-size: 0.72rem;
+}
+
+/* ── 11. Location ─────────────────────────────────────────── */
 .location__inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -534,7 +733,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   box-shadow: 0 16px 48px rgba(0,0,0,0.1);
 }
 
-/* ── 11. Contact ──────────────────────────────────────────── */
+/* ── 12. Contact ──────────────────────────────────────────── */
 .contact {
   background: var(--c-dark);
 }
