@@ -831,6 +831,14 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 
 /* ── 13. Responsive ───────────────────────────────────────── */
 @media (max-width: 900px) {
+  /* Fix: nav__inner must paint above the mobile overlay (which is z-index 99
+     inside nav's stacking context, while nav__inner has no z-index and would
+     otherwise be painted beneath it, blocking the burger button). */
+  .nav__inner {
+    position: relative;
+    z-index: 100;
+  }
+
   .nav__links { display: none; }
   .nav__links.open {
     display: flex;
@@ -847,7 +855,18 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
     font-size: 1.25rem;
     color: var(--c-white);
   }
+  .nav__links.open a:hover { color: var(--c-sand); }
+
   .nav__burger { display: flex; }
+
+  /* Keep burger spans white when menu is open (even if nav is .scrolled) */
+  .nav__burger.open span,
+  .nav.scrolled .nav__burger.open span {
+    background: var(--c-white);
+  }
+
+  /* Reduce vertical padding on tablet */
+  .section { padding-block: var(--space-xl); }
 
   .about__inner,
   .location__inner,
@@ -874,10 +893,42 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 
 @media (max-width: 560px) {
-  .about__stats { gap: var(--space-md); }
+  /* Further reduce padding on small phones */
+  .section { padding-block: var(--space-lg); }
+
+  .about__stats {
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
   .gallery__grid { grid-template-columns: 1fr; }
   .gallery__item--large { grid-column: span 1; }
   .amenities__grid { grid-template-columns: 1fr; }
+
+  /* Calendar: fill full width, shrink day text slightly */
+  .avail__cal-wrap { max-width: 100%; }
+
+  .cal__day { font-size: 0.72rem; }
+
+  .cal__day-header {
+    font-size: 0.58rem;
+    letter-spacing: 0.04em;
+  }
+
+  .avail__legend {
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  /* Tabs full-width on small screens */
+  .avail__tabs { width: 100%; }
+  .avail__tab  { flex: 1; padding-inline: 1rem; }
+
+  /* Ensure hero text has breathing room */
+  .hero__content { padding-inline: var(--space-sm); }
+
+  /* Contact form full-width submit button */
+  .contact__form .btn { width: 100%; text-align: center; }
 }
 
 /* ── 14. Scroll animations ────────────────────────────────── */
